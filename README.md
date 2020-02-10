@@ -5,3 +5,5 @@ Lua modules for NodeMCU firmware
 Digital Proximity and Ambient Light Sensor
 
 [Documentation](apds9930/apds9930.md)
+
+[Source](apds9930/)
