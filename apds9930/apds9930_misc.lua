@@ -72,7 +72,7 @@ function write_word(reg_addr, word, mode)
   local a = struct.pack("<I2", word)
   local i
   for i=1,#a do
-	table.insert(t, a:byte(i))
+    table.insert(t, a:byte(i))
   end
   return write_reg(reg_addr, t, mode)
 end

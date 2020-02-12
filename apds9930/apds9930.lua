@@ -5,6 +5,8 @@
 --
 -- MIT license, http://opensource.org/licenses/MIT
 -- ***************************************************************************
+require("bit")
+require("i2c")
 
 local moduleName = ...
 local M = {}
