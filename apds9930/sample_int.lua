@@ -6,10 +6,12 @@ i2c.setup(id, sda, scl, i2c.FAST)
 
 apds = require('apds9930')
 
-apds.setup()
+if not apds.setup() then
+  return
+end
 
 -- Create "sensor interrupt" trigger
-gpio.mode(2, gpio.INPUT)
+gpio.mode(2, gpio.INT)
 gpio.trig(2, "down", function(l, w)
   if apds.isProximityInterrupt() then
     print(string.format("proximity: %d", apds.getProximityData()))

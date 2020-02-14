@@ -28,7 +28,7 @@ M.ambient_to_lux = ambient_to_lux
 function M.setup()
   if is_i2c_addr_valid(I2C_ADDR) == false then
     print("APDS9930 device not found")
-    return nil
+    return false
   end
   
   M.enable(F.ALL, OFF)
@@ -48,6 +48,7 @@ function M.setup()
   write_word(R.AILT, DEF.AILT)
   write_word(R.AIHT, DEF.AIHT)
   write_byte(R.PERS, DEF.PERS)
+  return true
 end
 
 -- The value of the ENABLE register, which stores 

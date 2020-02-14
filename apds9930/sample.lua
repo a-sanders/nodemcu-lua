@@ -5,7 +5,10 @@ scl = 1 -- GPIO5
 i2c.setup(id, sda, scl, i2c.FAST)
 
 apds = require('apds9930')
-apds.setup()
+
+if not apds.setup() then
+  return
+end
 
 prox_timer = tmr:create()
 prox_timer:register(500, tmr.ALARM_AUTO, function(t) 
